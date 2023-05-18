@@ -83,7 +83,7 @@ def cleansing(text):
     text = re.sub('@[^\s]+', '', text)
     text = re.sub(r'https\S+', '', text)
     text = re.sub(r'#\w+\s*', '', text)
-    text = remove_emojis(text)
+    #text = remove_emojis(text)
     text = re.sub(r'\u2026', '', text)
     text = re.sub('/', '', text)
     text = re.sub('%', '', text)
@@ -252,6 +252,7 @@ def pre_processing():
     json_data = request.get_json()
     data = json_data.get('data')
     
+    remove_emoji = []
     remove_character = []
     text_lower_case = []
     tokens = []
@@ -261,9 +262,16 @@ def pre_processing():
     slang_removed_text = []
     
     for tweet in data:
+        modified_tweet ={
+            'removeemoji_text': remove_emojis(tweet.get('full_text')),
+            'original_emoji' : tweet.get('full_text')
+        }
+        remove_emoji.append(modified_tweet)
+    
+    for tweet in remove_emoji:
         modified_tweet = {
-            'cleansing_text': cleansing(tweet.get('full_text')),
-            'original_cleansing' : tweet.get('full_text')
+            'cleansing_text': cleansing(tweet.get('removeemoji_text')),
+            'original_cleansing' : tweet.get('removeemoji_text')
         }
         remove_character.append(modified_tweet)
         
@@ -310,6 +318,7 @@ def pre_processing():
         slang_removed_text.append(modified_tweet)
     
     return jsonify({
+        'remove_emoji' : remove_emoji,
         'remove_character': remove_character,
         'text_lower_case': text_lower_case,
         'tokens': tokens,
