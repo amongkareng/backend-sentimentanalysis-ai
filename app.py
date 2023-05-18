@@ -263,7 +263,7 @@ def pre_processing():
     final_process = []
     
     for tweet in data:
-        modified_tweet ={
+        modified_tweet = {
             'removeemoji_text': remove_emojis(tweet.get('full_text')),
             'original_emoji' : tweet.get('full_text')
         }
@@ -318,16 +318,12 @@ def pre_processing():
         }
         slang_removed_text.append(modified_tweet)
         
-
-
     for emoji_tweet, slang_tweet in zip(remove_emoji, slang_removed_text):
-        for tweet in [emoji_tweet, slang_tweet]:
-            modified_tweet = {
-            'original_emoji': tweet.get('original_emoji'),
-            'slangremove_andfinaltext': tweet.get('slangremove_andfinaltext')
+        modified_tweet = {
+            'original_emoji': emoji_tweet.get('original_emoji'),
+            'slangremove_andfinaltext': slang_tweet.get('slangremove_andfinaltext')
         }
         final_process.append(modified_tweet)
-
     
     return jsonify({
         'remove_emoji' : remove_emoji,
@@ -340,7 +336,7 @@ def pre_processing():
         'slang_remove' : slang_removed_text,
         'final_process': final_process
     })
-    
+
 
 
 
