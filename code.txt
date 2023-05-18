@@ -1,0 +1,51 @@
+@app.route('/preprocessing', methods=['POST'])
+def pre_processing():
+    # Your preprocessing code...
+    with open('datasetkotor/FetchTweetFIX.csv', 'rb') as f:
+        result = chardet.detect(f.read())
+        encoding = result['encoding']
+    try:
+        data = pd.read_csv('datasetkotor/FetchTweetFIX.csv', encoding=encoding)  
+        success_count = 0
+        failure_count = 0
+
+        for index, row in data.iterrows():
+            tweet_text = row['Tweet Text']
+
+            # Preprocess the tweet...
+            emoji_remove = remove_emojis(tweet_text)
+            filtering = cleansing(emoji_remove)
+            casefolding = filtering.lower()
+            # Tokenize preprocessed text
+            tokens = nltk.word_tokenize(casefolding)
+            # Remove stopwords
+            tokens = remove_stopwords(tokens)
+            # Convert slang words
+            tokens = replace_slang(tokens)
+            # Perform stemming
+            stems = tokenize_and_stem(" ".join(tokens))
+            stemmed_text = " ".join(stems)
+
+            try:
+                response = requests.post(API_ENDPOINT, json={
+                    'Tweet Text': tweet_text,
+                    'emoji remove': emoji_remove,
+                    'filtering': filtering,
+                    'casefolding': casefolding,
+                    'tokenize': tokens,
+                    'stemmed text': stemmed_text
+                })
+                response.close()
+
+                if response.status_code == 200:
+                    success_count += 1
+                else:
+                    failure_count += 1
+            except Exception as e:
+                failure_count += 1
+
+        return jsonify({
+            'message': f'{success_count} rows processed and posted successfully. {failure_count} rows failed.'
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)})
