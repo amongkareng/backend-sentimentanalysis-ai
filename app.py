@@ -31,6 +31,8 @@ import numpy as np
 import urllib3
 from flask_cors import CORS
 from sklearn.preprocessing import MinMaxScaler
+import joblib
+
 
 app = Flask(__name__)
 app.debug = True
@@ -39,6 +41,10 @@ logging.basicConfig(filename='error.log', level=logging.DEBUG)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 #API_ENDPOINT = 'http://127.0.0.1:5000/preprocessing'
+
+
+model_dataset = joblib.load('./model/model_datasetAI.pkl')
+vectorizer_dataset = joblib.load('./vectorizer/vectorizer_dataset.pkl')
 
 
 
@@ -132,8 +138,6 @@ def replace_slang(tokens):
     replaced_words = [slang_dict[word] if isinstance(slang_dict.get(word), str) else '' for word in slang_words]
     tokens = [replaced_words[slang_words.index(word)] if word in slang_words else word for word in tokens]
     return tokens
-
-
 # Preprocess the text data
 def preprocess_text(text):
     # Tokenize the text
@@ -203,7 +207,7 @@ def preprocess_and_split_data(texts, data):
     cv = CountVectorizer(stop_words='english', ngram_range=(1, 1), tokenizer=token.tokenize)
     text_counts = cv.fit_transform(texts)
     # Split the data into training and testing sets
-    X_train, X_test, y_train, y_test = train_test_split(text_counts, [tweet['label'] for tweet in data] , test_size=0.2, random_state=123)
+    X_train, X_test, y_train, y_test = train_test_split(text_counts, [tweet['label'] for tweet in data] , test_size=0.5, random_state=123)
 
     return X_train, X_test, y_train, y_test
 
@@ -245,6 +249,8 @@ def compute_accuracy(y_true, y_pred):
     return accuracy
 
 
+
+
 @app.route('/preprocessing', methods=['POST'])
 def pre_processing():
     json_data = request.get_json()
@@ -260,10 +266,18 @@ def pre_processing():
     slang_removed_text = []
     final_process = []
     
+    
     for tweet in data:
         modified_tweet = {
-            'removeemoji_text': remove_emojis(tweet.get('full_text')),
-            'original_emoji' : tweet.get('full_text')
+            'casefolding_text': case_folding(tweet.get('full_text')),
+            'original_casefolding' :tweet.get('full_text')
+        }   
+        text_lower_case.append(modified_tweet)
+    
+    for tweet in text_lower_case:
+        modified_tweet = {
+            'removeemoji_text': remove_emojis(tweet.get('casefolding_text')),
+            'original_emoji' : tweet.get('casefolding_text')
         }
         remove_emoji.append(modified_tweet)
     
@@ -276,15 +290,8 @@ def pre_processing():
         
     for tweet in remove_character:
         modified_tweet = {
-            'casefolding_text': case_folding(tweet.get('cleansing_text')),
-            'original_casefolding' :tweet.get('cleansing_text')
-        }   
-        text_lower_case.append(modified_tweet)
-        
-    for tweet in text_lower_case:
-        modified_tweet = {
-            'tokenize_text': word_tokenize(tweet.get('casefolding_text')),
-            'original_tokenize' : tweet.get('casefolding_text')
+            'tokenize_text': word_tokenize(tweet.get('cleansing_text')),
+            'original_tokenize' : tweet.get('cleansing_text')
         }
         tokens.append(modified_tweet)
         
@@ -316,9 +323,9 @@ def pre_processing():
         }
         slang_removed_text.append(modified_tweet)
         
-    for emoji_tweet, slang_tweet in zip(remove_emoji, slang_removed_text):
+    for text_original, slang_tweet in zip(text_lower_case, slang_removed_text):
         modified_tweet = {
-            'original_emoji': emoji_tweet.get('original_emoji'),
+            'original_casefolding': text_original.get('original_casefolding'),
             'slangremove_andfinaltext': slang_tweet.get('slangremove_andfinaltext')
         }
         final_process.append(modified_tweet)
@@ -378,14 +385,22 @@ def process_data():
         'processed_data': data
     }
     return jsonify(response)
-# data = {'data': [
-#         {'tweet': "sentiment", 'name': 'label 1'},
-#         {'tweet': "sentiment", 'name': 'label 1'}, 
-#     }
 
+################################################################
 
-
-
+@app.route('/prediction',methods=['POST'])
+def predict_dataset():
+    try:
+        text = request.json["full_text"]
+        text_count = vectorizer_dataset.transform([text])
+        # Ensure the number of features matches the model's expectations
+        if text_count.shape[1] != model_dataset.coef_.shape[1]:
+            return jsonify({'error': 'Number of features in input does not match the model.'})
+        predicted_label = model_dataset.predict(text_count)[0]
+        predicted_label = int(predicted_label)
+        return jsonify({'label':predicted_label , 'full_text': text})
+    except Exception as e: 
+        return jsonify({'error': str(e)})
 
 
 
