@@ -42,8 +42,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 #API_ENDPOINT = 'http://127.0.0.1:5000/preprocessing'
 
-
-model_dataset = joblib.load('./model/model_datasetAI.pkl')
+model_dataset = joblib.load('./model/model_dataset.pkl')
 vectorizer_dataset = joblib.load('./vectorizer/vectorizer_dataset.pkl')
 
 
@@ -388,18 +387,20 @@ def process_data():
 
 ################################################################
 
-@app.route('/prediction',methods=['POST'])
+@app.route('/prediction', methods=['POST'])
 def predict_dataset():
     try:
         text = request.json["full_text"]
         text_count = vectorizer_dataset.transform([text])
+        
         # Ensure the number of features matches the model's expectations
-        if text_count.shape[1] != model_dataset.coef_.shape[1]:
+        if text_count.shape[1] != model_dataset.feature_count_.shape[1]:
             return jsonify({'error': 'Number of features in input does not match the model.'})
+        
         predicted_label = model_dataset.predict(text_count)[0]
         predicted_label = int(predicted_label)
-        return jsonify({'label':predicted_label , 'full_text': text})
-    except Exception as e: 
+        return jsonify({'label': predicted_label, 'full_text': text})
+    except Exception as e:
         return jsonify({'error': str(e)})
 
 

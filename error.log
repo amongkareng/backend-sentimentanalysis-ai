@@ -816,3 +816,13 @@ INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:25:39] "POST /prediction HTTP/1.1" 2
 INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:27:15] "POST /prediction HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:31:00] "POST /prediction HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:34:53] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:47:05] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:48:24] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:48:41] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:48:56] "POST /prediction HTTP/1.1" 200 -
