@@ -202,9 +202,8 @@ def preprocess_and_split_data(texts, data):
     token = RegexpTokenizer(r'[a-zA-Z0-9]+')
     cv = CountVectorizer(stop_words='english', ngram_range=(1, 1), tokenizer=token.tokenize)
     text_counts = cv.fit_transform(texts)
-
     # Split the data into training and testing sets
-    X_train, X_test, y_train, y_test = train_test_split(text_counts, [tweet['label'] for tweet in data], test_size=0.2, random_state=19)
+    X_train, X_test, y_train, y_test = train_test_split(text_counts, [tweet['label'] for tweet in data] , test_size=0.2, random_state=123)
 
     return X_train, X_test, y_train, y_test
 
@@ -221,7 +220,6 @@ def train_classifier(X_train, y_train):
 def predict_labels(clf, X_test):
     # Make predictions on the testing data
     y_pred = clf.predict(X_test)
-
     return y_pred
 
 
@@ -357,10 +355,14 @@ def process_data():
     # Perform text preprocessing and split into training and testing sets
     X_train, X_test, y_train, y_test = preprocess_and_split_data(tweets, data)
 
-    # Train a classifier and make predictions
+# Train a classifier and make predictions
     clf = train_classifier(X_train, y_train)
     y_pred = predict_labels(clf, X_test)
+# Assign predicted labels to data
+    for i, item in enumerate(data):
+        item['predicted_label'] = y_pred[i] if i < len(y_pred) else None
 
+        
     # Compute precision, recall, and accuracy
     precision = compute_precision(y_test, y_pred)
     recall = compute_recall(y_test, y_pred)
