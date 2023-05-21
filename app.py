@@ -33,7 +33,7 @@ from flask_cors import CORS
 from sklearn.preprocessing import MinMaxScaler
 import joblib
 from scipy.sparse import hstack
-
+import math
 app = Flask(__name__)
 app.debug = True
 # Configure logging
@@ -305,6 +305,9 @@ def replace_slang(text):
 def process_data():
     json_data = request.get_json()
     data = json_data.get('data')
+    ratio = json_data.get('ratio')
+    test_samples = json_data.get('test_samples')
+    random_state = json_data.get('random_state')
 
     processed_texts = []
     labels = []
@@ -357,8 +360,20 @@ def process_data():
     # Encode the labels
     y = label_encoder.fit_transform(df_concatenated['Label'])
 
+    
+    if ratio is not None and test_samples is not None:
+        return jsonify({'error': 'Please provide either "ratio" or "test_samples", not both.'})
+
+    if ratio is not None:
+        X_train, X_test, y_train, y_test = train_test_split(df_concatenated.drop('Label', axis=1), y, test_size=ratio, random_state=random_state)
+    elif test_samples is not None:
+        if test_samples >= len(df_concatenated):
+            return jsonify({'error': 'The number of test samples cannot exceed the total number of samples.'})
+        X_train, X_test, y_train, y_test = train_test_split(df_concatenated.drop('Label', axis=1), y, test_size=test_samples, random_state=random_state)
+    else:
+        return jsonify({'error': 'Please provide either "ratio" or "test_samples" parameter.'})
+
     # Split the data into training and testing sets
-    X_train, X_test, y_train, y_test = train_test_split(df_concatenated.drop('Label', axis=1),y, test_size=0.3, random_state=123)
     X_train.columns = X_train.columns.astype(str)
     X_test.columns = X_test.columns.astype(str)
 
