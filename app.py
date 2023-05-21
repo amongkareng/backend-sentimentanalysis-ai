@@ -32,7 +32,7 @@ import urllib3
 from flask_cors import CORS
 from sklearn.preprocessing import MinMaxScaler
 import joblib
-
+from scipy.sparse import hstack
 
 app = Flask(__name__)
 app.debug = True
@@ -44,8 +44,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 model_dataset = joblib.load('./model/model_dataset.pkl')
 vectorizer_dataset = joblib.load('./vectorizer/vectorizer_dataset.pkl')
-
-
+model_AI = joblib.load('./model/SentimenAnalisisAImodel.pkl')
+vectorizerAI = joblib.load('./vectorizer/SentimenAnalisisAIvectorizer.pkl')
 
 app = Flask(__name__)
 CORS(app)
@@ -67,13 +67,11 @@ emoji_pattern = re.compile("["
                 u"\u200c"  # Zero Width Non-Joiner
                 "\U0001F602"
                 "]+", flags=re.UNICODE)
-
 def remove_emojis(text):
     if isinstance(text, str):
         return emoji_pattern.sub(r'', text)
     else:
         return text
-
 ################################################################
 #CLEANSING AND REMOVE PUNCTUATION AND CASEFOLDING
 def cleansing(text):
@@ -121,17 +119,14 @@ def case_folding(text):
 # Tokenize text
 def tokenize(text):
     return nltk.word_tokenize(text)
-
 ################################################################
 # Remove stopwords
 def remove_stopwords(tokens):
     filtered_tokens = [word for word in tokens if word not in stopwords.words('indonesian')]
     return filtered_tokens
-
 ################################################################
 # Replace slang words with real words
 slang_dict = pd.read_csv("slang/slanglist.csv", index_col=0)["real_word"].to_dict()
-
 def replace_slang(tokens):
     slang_words = [word for word in tokens if word in slang_dict]
     replaced_words = [slang_dict[word] if isinstance(slang_dict.get(word), str) else '' for word in slang_words]
@@ -148,18 +143,15 @@ def preprocess_text(text):
     # Join the tokens back into a string
     text = " ".join(tokens)
     return text
-
 ################################################################
 # Stemming
 factory = StemmerFactory()
 stemmer = factory.create_stemmer()
-
 # Tokenize and stem text
 def tokenize_and_stem(text):
     tokens = word_tokenize(text)  # Tokenize using nltk.word_tokenize
     stems = [stemmer.stem(token) for token in tokens]
     return stems
-
 
 # Load the slang dictionary
 slang_dict = pd.read_csv("slang/slanglist.csv", index_col=0)["real_word"].to_dict()
@@ -182,73 +174,23 @@ def slang_remove(text):
     return text
 
 
-
-################################################################
-# Load the sentiment words file
-sentiment_words = pd.read_csv("sentimentword/sentimentwordlist.csv")
-# Define a dictionary to map sentiment values to scores
-sentiment_scores = {'positif': 1, 'negatif': -1}
-
-# Define a function to score a sentence
-def score_sentence(sentence):
-    words = sentence.lower().split()
-    sentiment_words_in_sentence = [word for word in words if word in sentiment_words["word"].tolist()]
-    sentiment_scores_in_sentence = [sentiment_scores[sentiment_words.loc[sentiment_words['word'] == word, 'sentiment'].values[0]] for word in sentiment_words_in_sentence]
-    document_score = sum(sentiment_scores_in_sentence)
-    return document_score
-
-
-
 #################
-def preprocess_and_split_data(texts, data):
-    # Tokenize the text using a regular expression tokenizer
-    token = RegexpTokenizer(r'[a-zA-Z0-9]+')
-    cv = CountVectorizer(stop_words='english', ngram_range=(1, 1), tokenizer=token.tokenize)
-    text_counts = cv.fit_transform(texts)
-    # Split the data into training and testing sets
-    X_train, X_test, y_train, y_test = train_test_split(text_counts, [tweet['label'] for tweet in data] , test_size=0.5, random_state=123)
+# Create a regex tokenizer
+tokenizer = RegexpTokenizer(r'[a-zA-Z0-9]+')
 
-    return X_train, X_test, y_train, y_test
+# Initialize the CountVectorizer
+vectorizer = CountVectorizer(tokenizer=tokenizer.tokenize, stop_words=stop_words, ngram_range=(1, 1))
 
-##################
-def train_classifier(X_train, y_train):
-    # Train a Multinomial Naive Bayes classifier
-    clf = MultinomialNB()
-    clf.fit(X_train, y_train)
-    
-    return clf
+def vectorize_text(text):
+    # Apply CountVectorizer to the preprocessed data
+    text_features = vectorizer.transform(text)
+    return text_features
 
 
-###################
-def predict_labels(clf, X_test):
-    # Make predictions on the testing data
-    y_pred = clf.predict(X_test)
-    return y_pred
-
-
-#############
-def compute_precision(y_true, y_pred):
-    # Compute precision
-    precision = precision_score(y_true, y_pred, average='weighted')
-
-    return precision
-
-###################
-def compute_recall(y_true, y_pred):
-    # Compute recall
-    recall = recall_score(y_true, y_pred, average='weighted')
-
-    return recall
-
-###################
-def compute_accuracy(y_true, y_pred):
-    # Compute accuracy
-    accuracy = accuracy_score(y_true, y_pred)
-
-    return accuracy
-
-
-
+# Initialize label encoder
+label_encoder = LabelEncoder()
+positive_emotions = ['senang', 'terkejut', 'netral']
+negative_emotions = ['sedih', 'takut']
 
 @app.route('/preprocessing', methods=['POST'])
 def pre_processing():
@@ -340,70 +282,175 @@ def pre_processing():
         'slang_remove' : slang_removed_text,
         'final_process': final_process
     })
-
-
-
-
-
 ################################################################
 
+from flask import Flask, jsonify, request
+from sklearn.feature_extraction.text import CountVectorizer
+from nltk.tokenize import RegexpTokenizer
+from sklearn.preprocessing import LabelEncoder
+from scipy.sparse import hstack
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import accuracy_score, precision_score, recall_score
+import pandas as pd
+import numpy as np
+
+app = Flask(__name__)
+
+def replace_slang(text):
+    # Implement your replace_slang function here
+    pass
 
 @app.route('/processing', methods=['POST'])
 def process_data():
     json_data = request.get_json()
     data = json_data.get('data')
 
-    # Extract tweet texts from data
-    tweets = [tweet['Tweet Text'] for tweet in data]
-    # Apply slang removal to the tweet texts
-    tweets = [slang_remove(tweet) for tweet in tweets]
+    processed_texts = []
+    labels = []
+    positive_emotions_list = []
+    negative_emotions_list = []
+    label_encoder.fit([entry.get('Emosi') for entry in data])
 
-    # Perform text preprocessing and split into training and testing sets
-    X_train, X_test, y_train, y_test = preprocess_and_split_data(tweets, data)
 
-# Train a classifier and make predictions
-    clf = train_classifier(X_train, y_train)
-    y_pred = predict_labels(clf, X_test)
-# Assign predicted labels to data
-    for i, item in enumerate(data):
-        item['predicted_label'] = y_pred[i] if i < len(y_pred) else None
-
+    for entry in data:
+        tweet_text = entry.get('Tweet Text')
+        emosi = entry.get('Emosi')
+        label = entry.get('Label')
+    # Preprocess the tweet text
+        processed_texts.append(tweet_text)
+        emosi_encoded = label_encoder.transform([emosi])[0]
         
-    # Compute precision, recall, and accuracy
-    precision = compute_precision(y_test, y_pred)
-    recall = compute_recall(y_test, y_pred)
-    accuracy = compute_accuracy(y_test, y_pred)
+        positive_emotion = 1 if label_encoder.inverse_transform([emosi_encoded])[0] in positive_emotions else 0
+        negative_emotion = 1 if label_encoder.inverse_transform([emosi_encoded])[0] in negative_emotions else 0
 
-    # Compute and return the confusion matrix, precision, recall, and accuracy as a JSON response
-    cm = confusion_matrix(y_test, y_pred)
+
+        positive_emotions_list.append(positive_emotion)
+        negative_emotions_list.append(negative_emotion)
+        labels.append(label)
+
+# Create a DataFrame from the processed texts and emotion features
+    df = pd.DataFrame({'Processed Text': processed_texts, 'Label': labels})
+
+# Apply conversion to positive and negative emotions using lambda functions
+    df['Positive Emotion'] = positive_emotions_list
+    df['Negative Emotion'] = negative_emotions_list
+    # Return the DataFrame
+       
+    # Vectorize the preprocessed text
+    # Create a regex tokenizer
+    tokenizer = RegexpTokenizer(r'[a-zA-Z0-9]+')
+    vectorizer = CountVectorizer(tokenizer=tokenizer.tokenize, stop_words=stop_words,ngram_range=(1, 1))
+    text_features = vectorizer.fit_transform(df['Processed Text'])
+
+    # Convert emotion flags to numpy arrays
+    positive_emotions_array = np.array(df['Positive Emotion']).reshape(-1, 1)
+    negative_emotions_array = np.array(df['Negative Emotion']).reshape(-1, 1)
+
+    # Concatenate the vectorized text features and the emotion features
+    concatenated_features = hstack((text_features, positive_emotions_array, negative_emotions_array))
+
+    # Assign the concatenated features to the dataframe
+    df_concatenated = pd.DataFrame(concatenated_features.toarray())
+    df_concatenated['Label'] = df['Label']
+
+    # Encode the labels
+    y = label_encoder.fit_transform(df_concatenated['Label'])
+
+    # Split the data into training and testing sets
+    X_train, X_test, y_train, y_test = train_test_split(df_concatenated.drop('Label', axis=1),y, test_size=0.3, random_state=123)
+    X_train.columns = X_train.columns.astype(str)
+    X_test.columns = X_test.columns.astype(str)
+
+
+    # Apply Laplace smoothing
+    alpha = 2.0  # Laplace smoothing parameter
+
+    # Train a Naive Bayes classifier with Laplace smoothing
+    clf = MultinomialNB(alpha=alpha)
+    clf.fit(X_train, y_train)
+
+    # Make predictions on the test set
+    y_pred = clf.predict(X_test)
+
+
+# Evaluate the model
+    accuracy = accuracy_score(y_test, y_pred)
+    precision = precision_score(y_test, y_pred)
+    recall = recall_score(y_test, y_pred)
+
+
+
     response = {
-        'confusion_matrix': cm.tolist(),
-        'precision': precision,
-        'recall': recall,
+        'predictions': [],
         'accuracy': accuracy,
-        'processed_data': data
+        'precision': precision,
+        'recall': recall
     }
+
+    for entry, predicted_label in zip(data, y_pred):
+        tweet_text = entry.get('Tweet Text')
+        predicted_label = label_encoder.inverse_transform([predicted_label])[0]
+
+        response['predictions'].append({
+            'Tweet Text': tweet_text,
+            'Predicted Label': predicted_label
+        })
+
+    # Convert DataFrame to JSON
     return jsonify(response)
+
+if __name__ == '__main__':
+    app.run()
+
+
+
+
+
+
 
 ################################################################
 
 @app.route('/prediction', methods=['POST'])
 def predict_dataset():
     try:
-        text = request.json["full_text"]
-        text_count = vectorizer_dataset.transform([text])
+        # Extract the 'data' field from the JSON payload as an array
+        texts = request.json['data']
+
+        # Perform text classification for each text in the array
+        predictions = []
+        true_labels = []
+        for item in texts:
+            text = item['join_text'].lower()  # Extract the text from the 'join_text' field
+
+            text_counts = vectorizer_dataset.transform([text])
+            predicted_label = model_dataset.predict(text_counts)[0]
+            predicted_label = int(predicted_label)
+            predictions.append({'sentiment': predicted_label, 'text': text})
+            true_labels.append(0)  # Assuming all ground truth labels are 0 for this example
         
-        # Ensure the number of features matches the model's expectations
-        if text_count.shape[1] != model_dataset.feature_count_.shape[1]:
-            return jsonify({'error': 'Number of features in input does not match the model.'})
-        
-        predicted_label = model_dataset.predict(text_count)[0]
-        predicted_label = int(predicted_label)
-        return jsonify({'label': predicted_label, 'full_text': text})
+        # Calculate evaluation metrics
+        predicted_labels = [pred['sentiment'] for pred in predictions]
+        confusion = confusion_matrix(true_labels, predicted_labels)
+        accuracy = accuracy_score(true_labels, predicted_labels)
+        precision = precision_score(true_labels, predicted_labels)
+        recall = recall_score(true_labels, predicted_labels)
+
+        # Create the response dictionary including predictions and evaluation metrics
+        response = {
+            'predictions': predictions,
+            'confusion_matrix': confusion.tolist(),
+            'accuracy': accuracy,
+            'precision': precision,
+            'recall': recall
+        }
+
+        # Return the response dictionary as JSON response
+        return jsonify(response)
+    
     except Exception as e:
+        # Return an error message if an exception occurs
         return jsonify({'error': str(e)})
-
-
 
 if __name__ == '__main__':
     app.debug = True

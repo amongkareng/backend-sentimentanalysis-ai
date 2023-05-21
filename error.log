@@ -1,211 +1,128 @@
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-ERROR:app:Exception on /preprocessing [POST]
-Traceback (most recent call last):
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 280, in pre_processing
-    'tokenize_text': word_tokenize(tweet.get('full_text')),
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\__init__.py", line 129, in word_tokenize
-    sentences = [text] if preserve_line else sent_tokenize(text, language)
-                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\__init__.py", line 107, in sent_tokenize
-    return tokenizer.tokenize(text)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1281, in tokenize
-    return list(self.sentences_from_text(text, realign_boundaries))
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1341, in sentences_from_text
-    return [text[s:e] for s, e in self.span_tokenize(text, realign_boundaries)]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1341, in <listcomp>
-    return [text[s:e] for s, e in self.span_tokenize(text, realign_boundaries)]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1329, in span_tokenize
-    for sentence in slices:
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1459, in _realign_boundaries
-    for sentence1, sentence2 in _pair_iter(slices):
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 321, in _pair_iter
-    prev = next(iterator)
-           ^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1431, in _slices_from_text
-    for match, context in self._match_potential_end_contexts(text):
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1395, in _match_potential_end_contexts
-    for match in self._lang_vars.period_context_re().finditer(text):
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: expected string or bytes-like object, got 'NoneType'
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 15:22:27] "[35m[1mPOST /preprocessing HTTP/1.1[0m" 500 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-ERROR:app:Exception on /preprocessing [POST]
-Traceback (most recent call last):
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 279, in pre_processing
-    'tokenize_text': word_tokenize(tweet.get('full_text')),
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\__init__.py", line 129, in word_tokenize
-    sentences = [text] if preserve_line else sent_tokenize(text, language)
-                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\__init__.py", line 107, in sent_tokenize
-    return tokenizer.tokenize(text)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1281, in tokenize
-    return list(self.sentences_from_text(text, realign_boundaries))
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1341, in sentences_from_text
-    return [text[s:e] for s, e in self.span_tokenize(text, realign_boundaries)]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1341, in <listcomp>
-    return [text[s:e] for s, e in self.span_tokenize(text, realign_boundaries)]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1329, in span_tokenize
-    for sentence in slices:
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1459, in _realign_boundaries
-    for sentence1, sentence2 in _pair_iter(slices):
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 321, in _pair_iter
-    prev = next(iterator)
-           ^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1431, in _slices_from_text
-    for match, context in self._match_potential_end_contexts(text):
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1395, in _match_potential_end_contexts
-    for match in self._lang_vars.period_context_re().finditer(text):
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: expected string or bytes-like object, got 'NoneType'
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 15:28:23] "[35m[1mPOST /preprocessing HTTP/1.1[0m" 500 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 15:31:45] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 15:35:28] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-ERROR:app:Exception on /preprocessing [POST]
-Traceback (most recent call last):
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 295, in pre_processing
-    'join_text': ' '.join(tweet.get('stemming_text'))
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: can only join an iterable
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 15:43:15] "[35m[1mPOST /preprocessing HTTP/1.1[0m" 500 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 15:48:36] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-ERROR:app:Exception on /preprocessing [POST]
-Traceback (most recent call last):
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 295, in pre_processing
-    'join_text': ' '.join(tweet.get('stemming_text'))
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: can only join an iterable
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 15:52:34] "[35m[1mPOST /preprocessing HTTP/1.1[0m" 500 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 15:58:11] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-ERROR:app:Exception on /preprocessing [POST]
-Traceback (most recent call last):
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 295, in pre_processing
-    'join_text': ' '.join(tweet.get('stemming_text'))
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: can only join an iterable
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 15:59:50] "[35m[1mPOST /preprocessing HTTP/1.1[0m" 500 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 16:08:43] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 16:11:34] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 16:15:49] "POST /preprocessing HTTP/1.1" 200 -
 ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 224, in _encode
+    return _map_to_integer(values, uniques)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 164, in _map_to_integer
+    return np.array([table[v] for v in values])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 164, in <listcomp>
+    return np.array([table[v] for v in values])
+                     ~~~~~^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 158, in __missing__
+    raise KeyError(key)
+KeyError: 'sedih'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 323, in process_data
+    emosi_encoded = label_encoder.transform([emosi])[0]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 139, in transform
+    return _encode(y, uniques=self.classes_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 226, in _encode
+    raise ValueError(f"y contains previously unseen labels: {str(e)}")
+ValueError: y contains previously unseen labels: 'sedih'
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 11:20:25] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 224, in _encode
+    return _map_to_integer(values, uniques)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 164, in _map_to_integer
+    return np.array([table[v] for v in values])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 164, in <listcomp>
+    return np.array([table[v] for v in values])
+                     ~~~~~^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 158, in __missing__
+    raise KeyError(key)
+KeyError: 'negatif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 350, in process_data
+    y = label_encoder.transform(df_concatenated["Label"])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 139, in transform
+    return _encode(y, uniques=self.classes_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 226, in _encode
+    raise ValueError(f"y contains previously unseen labels: {str(e)}")
+ValueError: y contains previously unseen labels: 'negatif'
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 11:25:33] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 11:37:36] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 224, in _encode
+    return _map_to_integer(values, uniques)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 164, in _map_to_integer
+    return np.array([table[v] for v in values])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 164, in <listcomp>
+    return np.array([table[v] for v in values])
+                     ~~~~~^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 158, in __missing__
+    raise KeyError(key)
+KeyError: 'negatif'
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
     response = self.full_dispatch_request()
@@ -223,14 +140,18 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\KULIAH\backend-sentiment\app.py", line 335, in process_data
-    tweets = [tweet['Tweet Text'] for tweet in data]
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 335, in <listcomp>
-    tweets = [tweet['Tweet Text'] for tweet in data]
-              ~~~~~^^^^^^^^^^^^^^
-KeyError: 'Tweet Text'
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 16:15:59] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 16:17:45] "POST /processing HTTP/1.1" 200 -
+    y = label_encoder.transform(df_concatenated["Label"])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 139, in transform
+    return _encode(y, uniques=self.classes_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 226, in _encode
+    raise ValueError(f"y contains previously unseen labels: {str(e)}")
+ValueError: y contains previously unseen labels: 'negatif'
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 11:44:52] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
@@ -245,6 +166,276 @@ Traceback (most recent call last):
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
     return cors_after_request(app.make_response(f(*args, **kwargs)))
                                                 ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 374, in process_data
+    predicted_label = label_encoder.inverse_transform([predicted_label])[0]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 162, in inverse_transform
+    raise ValueError("y contains previously unseen labels: %s" % str(diff))
+ValueError: y contains previously unseen labels: ['negatif']
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 11:48:49] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 307, in process_data
+    emosi_encoded = label_encoder.transform([emosi])[0]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 133, in transform
+    check_is_fitted(self)
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1390, in check_is_fitted
+    raise NotFittedError(msg % {"name": type(estimator).__name__})
+sklearn.exceptions.NotFittedError: This LabelEncoder instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 11:51:54] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 298, in process_data
+    label_encoder.fit(df_concatenated["Label"])
+                      ^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'df_concatenated' where it is not associated with a value
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 11:53:42] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 308, in process_data
+    emosi_encoded = label_encoder.transform([emosi])[0]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 133, in transform
+    check_is_fitted(self)
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1390, in check_is_fitted
+    raise NotFittedError(msg % {"name": type(estimator).__name__})
+sklearn.exceptions.NotFittedError: This LabelEncoder instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 11:55:44] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 308, in process_data
+    emosi_encoded = label_encoder.transform([emosi])[0]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 133, in transform
+    check_is_fitted(self)
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1390, in check_is_fitted
+    raise NotFittedError(msg % {"name": type(estimator).__name__})
+sklearn.exceptions.NotFittedError: This LabelEncoder instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 11:57:03] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 224, in _encode
+    return _map_to_integer(values, uniques)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 164, in _map_to_integer
+    return np.array([table[v] for v in values])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 164, in <listcomp>
+    return np.array([table[v] for v in values])
+                     ~~~~~^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 158, in __missing__
+    raise KeyError(key)
+KeyError: 'sedih'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 311, in process_data
+    emosi_encoded = label_encoder.transform([emosi])[0]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 139, in transform
+    return _encode(y, uniques=self.classes_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 226, in _encode
+    raise ValueError(f"y contains previously unseen labels: {str(e)}")
+ValueError: y contains previously unseen labels: 'sedih'
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:01:42] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 224, in _encode
+    return _map_to_integer(values, uniques)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 164, in _map_to_integer
+    return np.array([table[v] for v in values])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 164, in <listcomp>
+    return np.array([table[v] for v in values])
+                     ~~~~~^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 158, in __missing__
+    raise KeyError(key)
+KeyError: 'sedih'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 311, in process_data
+    emosi_encoded = label_encoder.transform([emosi])[0]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 139, in transform
+    return _encode(y, uniques=self.classes_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_encode.py", line 226, in _encode
+    raise ValueError(f"y contains previously unseen labels: {str(e)}")
+ValueError: y contains previously unseen labels: 'sedih'
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:05:57] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 379, in process_data
+    predicted_label = label_encoder.inverse_transform([predicted_label])[0]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 162, in inverse_transform
+    raise ValueError("y contains previously unseen labels: %s" % str(diff))
+ValueError: y contains previously unseen labels: ['negatif']
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:08:47] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
          ^^^^^^^^^^^^^^^^^^^^^^^
@@ -252,13 +443,22 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\KULIAH\backend-sentiment\app.py", line 344, in process_data
-    tweets = [tweet['Tweet Text'] for tweet in data]
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 344, in <listcomp>
-    tweets = [tweet['Tweet Text'] for tweet in data]
-              ~~~~~^^^^^^^^^^^^^^
-KeyError: 'Tweet Text'
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 21:17:44] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+    text_features = vectorizer.fit_transform(df['Processed Text'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1388, in fit_transform
+    vocabulary, X = self._count_vocab(raw_documents, self.fixed_vocabulary_)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1275, in _count_vocab
+    for feature in analyze(doc):
+                   ^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 111, in _analyze
+    doc = preprocessor(doc)
+          ^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 69, in _preprocess
+    doc = doc.lower()
+          ^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:17:48] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
@@ -270,73 +470,20 @@ Traceback (most recent call last):
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
     rv = self.handle_user_exception(e)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
          ^^^^^^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 344, in process_data
-    tweets = [tweet['Tweet Text'] for tweet in data]
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 344, in <listcomp>
-    tweets = [tweet['Tweet Text'] for tweet in data]
-              ~~~~~^^^^^^^^^^^^^^
-KeyError: 'Tweet Text'
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 21:18:56] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 21:21:25] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 21:31:02] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 21:57:18] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 22:02:54] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 22:08:02] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 22:09:33] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 22:10:41] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 22:13:07] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 22:15:02] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 22:21:02] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 22:22:49] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 22:23:20] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [18/May/2023 22:28:58] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 00:14:32] "POST /preprocessing HTTP/1.1" 200 -
+  File "C:\KULIAH\backend-sentiment\app.py", line 325, in process_data
+    processed_text = slang_remove(tweet_text)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 169, in slang_remove
+    text = nltk.word_tokenize(text.lower())
+                              ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:23:37] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
@@ -348,20 +495,20 @@ Traceback (most recent call last):
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
     rv = self.handle_user_exception(e)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
          ^^^^^^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 362, in process_data
-    y_pred, processed_data = predict_labels(clf, X_test,data)
-                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: predict_labels() takes 2 positional arguments but 3 were given
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 09:46:43] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+  File "C:\KULIAH\backend-sentiment\app.py", line 325, in process_data
+    processed_text = preprocess_text(tweet_text)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 144, in preprocess_text
+    text = " ".join(tokens)
+           ^^^^^^^^^^^^^^^^
+TypeError: can only join an iterable
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:25:40] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
@@ -373,26 +520,19 @@ Traceback (most recent call last):
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
     rv = self.handle_user_exception(e)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
          ^^^^^^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 367, in process_data
-    y_pred, processed_data = predict_labels(clf, X_test,data)
-                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 226, in predict_labels
-    item['predicted_label'] = y_pred[i]
-                              ~~~~~~^^^
-IndexError: index 1 is out of bounds for axis 0 with size 1
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 09:50:09] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
+  File "C:\KULIAH\backend-sentiment\app.py", line 392, in process_data
+    predicted_label = label_encoder.inverse_transform([predicted_label])[0]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 162, in inverse_transform
+    raise ValueError("y contains previously unseen labels: %s" % str(diff))
+ValueError: y contains previously unseen labels: ['negatif']
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:27:29] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
 ERROR:app:Exception on /processing [POST]
 Traceback (most recent call last):
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
@@ -401,26 +541,19 @@ Traceback (most recent call last):
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
     rv = self.handle_user_exception(e)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
          ^^^^^^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 366, in process_data
-    item['predicted_label'] = y_pred[i]
-                              ~~~~~~^^^
-IndexError: index 1 is out of bounds for axis 0 with size 1
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:01:41] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:02:51] "POST /processing HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:03:22] "POST /processing HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:05:03] "POST /processing HTTP/1.1" 200 -
+  File "C:\KULIAH\backend-sentiment\app.py", line 392, in process_data
+    predicted_label = label_encoder.inverse_transform([predicted_label])[0]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 162, in inverse_transform
+    raise ValueError("y contains previously unseen labels: %s" % str(diff))
+ValueError: y contains previously unseen labels: ['negatif']
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:29:36] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
@@ -432,35 +565,19 @@ Traceback (most recent call last):
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
     rv = self.handle_user_exception(e)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
          ^^^^^^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 366, in process_data
-    item['predicted_label'] = y_pred[i] if i > len(y_pred) else None
-                              ~~~~~~^^^
-IndexError: index 2 is out of bounds for axis 0 with size 1
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:08:45] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:09:00] "POST /processing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:17:43] "POST /processing HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:22:16] "POST /processing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:25:50] "POST /processing HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:27:54] "POST /processing HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:28:01] "POST /processing HTTP/1.1" 200 -
+  File "C:\KULIAH\backend-sentiment\app.py", line 392, in process_data
+    predicted_label = label_encoder.inverse_transform([predicted_label])[0]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 162, in inverse_transform
+    raise ValueError("y contains previously unseen labels: %s" % str(diff))
+ValueError: y contains previously unseen labels: ['negatif']
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:30:07] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
@@ -472,23 +589,17 @@ Traceback (most recent call last):
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
     rv = self.handle_user_exception(e)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
          ^^^^^^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 358, in process_data
-    X_train, X_test, y_train, y_test = preprocess_and_split_data(tweets, data)
-                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 204, in preprocess_and_split_data
-    text_counts = cv.fit_transform(texts.apply(str).values)
-                                   ^^^^^^^^^^^
-AttributeError: 'list' object has no attribute 'apply'
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:30:59] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+  File "C:\KULIAH\backend-sentiment\app.py", line 357, in process_data
+    labels = np.concatenate((y_train_encoded, y_test_encoded))
+                             ^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'y_train_encoded' where it is not associated with a value
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:34:58] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
@@ -500,9 +611,193 @@ Traceback (most recent call last):
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
     rv = self.handle_user_exception(e)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 357, in process_data
+    y = label_encoder.fit_tranform(df_concatenated["Label"])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LabelEncoder' object has no attribute 'fit_tranform'
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:42:09] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 113, in _check_targets
+    unique_values = np.union1d(y_true, y_pred)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<__array_function__ internals>", line 200, in union1d
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 932, in union1d
+    return unique(np.concatenate((ar1, ar2), axis=None))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<__array_function__ internals>", line 200, in unique
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 274, in unique
+    ret = _unique1d(ar, return_index, return_inverse, return_counts,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 336, in _unique1d
+    ar.sort()
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 379, in process_data
+    accuracy = accuracy_score(y_test, y_pred)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 192, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 221, in accuracy_score
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 119, in _check_targets
+    raise TypeError(
+TypeError: Labels in y_true and y_pred should be of the same type. Got y_true=[0] and y_pred=['negatif']. Make sure that the predictions provided by the classifier coincides with the true labels.
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:43:55] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 396, in process_data
+    predicted_label = label_encoder.inverse_transform([predicted_label])[0]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 162, in inverse_transform
+    raise ValueError("y contains previously unseen labels: %s" % str(diff))
+ValueError: y contains previously unseen labels: ['negatif']
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:48:25] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 396, in process_data
+    predicted_label = label_encoder.inverse_transform([predicted_label])[0]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 162, in inverse_transform
+    raise ValueError("y contains previously unseen labels: %s" % str(diff))
+ValueError: y contains previously unseen labels: ['negatif']
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:51:08] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 113, in _check_targets
+    unique_values = np.union1d(y_true, y_pred)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<__array_function__ internals>", line 200, in union1d
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 932, in union1d
+    return unique(np.concatenate((ar1, ar2), axis=None))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<__array_function__ internals>", line 200, in unique
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 274, in unique
+    ret = _unique1d(ar, return_index, return_inverse, return_counts,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 336, in _unique1d
+    ar.sort()
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 379, in process_data
+    accuracy = accuracy_score(y_test, y_pred)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 192, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 221, in accuracy_score
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 119, in _check_targets
+    raise TypeError(
+TypeError: Labels in y_true and y_pred should be of the same type. Got y_true=[0] and y_pred=['negatif']. Make sure that the predictions provided by the classifier coincides with the true labels.
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:54:26] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 113, in _check_targets
+    unique_values = np.union1d(y_true, y_pred)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<__array_function__ internals>", line 200, in union1d
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 932, in union1d
+    return unique(np.concatenate((ar1, ar2), axis=None))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<__array_function__ internals>", line 200, in unique
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 274, in unique
+    ret = _unique1d(ar, return_index, return_inverse, return_counts,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 336, in _unique1d
+    ar.sort()
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
          ^^^^^^^^^^^^^^^^^^^^^^^
@@ -510,8 +805,384 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\KULIAH\backend-sentiment\app.py", line 382, in process_data
-    return jsonify(response)
-           ^^^^^^^^^^^^^^^^^
+    accuracy = accuracy_score(y_test, y_pred)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 192, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 221, in accuracy_score
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 119, in _check_targets
+    raise TypeError(
+TypeError: Labels in y_true and y_pred should be of the same type. Got y_true=[0] and y_pred=['negatif']. Make sure that the predictions provided by the classifier coincides with the true labels.
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 12:56:07] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 113, in _check_targets
+    unique_values = np.union1d(y_true, y_pred)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<__array_function__ internals>", line 200, in union1d
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 932, in union1d
+    return unique(np.concatenate((ar1, ar2), axis=None))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<__array_function__ internals>", line 200, in unique
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 274, in unique
+    ret = _unique1d(ar, return_index, return_inverse, return_counts,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 336, in _unique1d
+    ar.sort()
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 381, in process_data
+    accuracy = accuracy_score(y_test, y_pred)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 192, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 221, in accuracy_score
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 119, in _check_targets
+    raise TypeError(
+TypeError: Labels in y_true and y_pred should be of the same type. Got y_true=[0] and y_pred=['negatif']. Make sure that the predictions provided by the classifier coincides with the true labels.
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:00:49] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 113, in _check_targets
+    unique_values = np.union1d(y_true, y_pred)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<__array_function__ internals>", line 200, in union1d
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 932, in union1d
+    return unique(np.concatenate((ar1, ar2), axis=None))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<__array_function__ internals>", line 200, in unique
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 274, in unique
+    ret = _unique1d(ar, return_index, return_inverse, return_counts,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 336, in _unique1d
+    ar.sort()
+TypeError: '<' not supported between instances of 'int' and 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 384, in process_data
+    accuracy = accuracy_score(y_true_string, y_pred_numeric)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 192, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 221, in accuracy_score
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 119, in _check_targets
+    raise TypeError(
+TypeError: Labels in y_true and y_pred should be of the same type. Got y_true=['negatif'] and y_pred=[0]. Make sure that the predictions provided by the classifier coincides with the true labels.
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:02:46] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 113, in _check_targets
+    unique_values = np.union1d(y_true, y_pred)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<__array_function__ internals>", line 200, in union1d
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 932, in union1d
+    return unique(np.concatenate((ar1, ar2), axis=None))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<__array_function__ internals>", line 200, in unique
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 274, in unique
+    ret = _unique1d(ar, return_index, return_inverse, return_counts,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\numpy\lib\arraysetops.py", line 336, in _unique1d
+    ar.sort()
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 378, in process_data
+    accuracy = accuracy_score(y_test, y_pred)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 192, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 221, in accuracy_score
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 119, in _check_targets
+    raise TypeError(
+TypeError: Labels in y_true and y_pred should be of the same type. Got y_true=[0] and y_pred=['negatif']. Make sure that the predictions provided by the classifier coincides with the true labels.
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:04:14] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:08:35] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:09:26] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 379, in process_data
+    accuracy = accuracy_score(y_test, y_pred)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 192, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 221, in accuracy_score
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\metrics\_classification.py", line 86, in _check_targets
+    check_consistent_length(y_true, y_pred)
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\validation.py", line 397, in check_consistent_length
+    raise ValueError(
+ValueError: Found input variables with inconsistent numbers of samples: [1, 9]
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:12:23] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:13:10] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:13:53] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:16:23] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:17:02] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:22:43] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 324, in process_data
+    emosi_encoded = label_encoder.transform([emosi])[0]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 133, in transform
+    check_is_fitted(self)
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1390, in check_is_fitted
+    raise NotFittedError(msg % {"name": type(estimator).__name__})
+sklearn.exceptions.NotFittedError: This LabelEncoder instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:27:16] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:28:53] "[33mPOST /processing HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:29:50] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 324, in process_data
+    label_encoded = label_encoder.transform([label])[0]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 133, in transform
+    check_is_fitted(self)
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1390, in check_is_fitted
+    raise NotFittedError(msg % {"name": type(estimator).__name__})
+sklearn.exceptions.NotFittedError: This LabelEncoder instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:40:42] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 324, in process_data
+    label_encoded = label_encoder.transform([label])[0]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 133, in transform
+    check_is_fitted(self)
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1390, in check_is_fitted
+    raise NotFittedError(msg % {"name": type(estimator).__name__})
+sklearn.exceptions.NotFittedError: This LabelEncoder instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:40:53] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:50:29] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 332, in process_data
+    df['Positive Emotion'] = positive_emotions_list
+    ~~^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\pandas\core\frame.py", line 3960, in __setitem__
+    self._set_item(key, value)
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\pandas\core\frame.py", line 4153, in _set_item
+    value = self._sanitize_column(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\pandas\core\frame.py", line 4880, in _sanitize_column
+    com.require_length_match(value, self.index)
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\pandas\core\common.py", line 576, in require_length_match
+    raise ValueError(
+ValueError: Length of values (1) does not match length of index (12)
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:52:03] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1487, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1506, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1837, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a DataFrame.
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:54:56] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 398, in process_data
+    return jsonify(response,df)
+           ^^^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\__init__.py", line 170, in jsonify
     return current_app.json.response(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -532,50 +1203,12 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 120, in _default
     raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
-TypeError: Object of type int64 is not JSON serializable
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:31:55] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
-ERROR:app:Exception on /processing [POST]
-Traceback (most recent call last):
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 382, in process_data
-    return jsonify(response)
-           ^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\__init__.py", line 170, in jsonify
-    return current_app.json.response(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 215, in response
-    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 180, in dumps
-    return json.dumps(obj, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ms i\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 238, in dumps
-    **kw).encode(obj)
-          ^^^^^^^^^^^
-  File "C:\Users\ms i\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 200, in encode
-    chunks = self.iterencode(o, _one_shot=True)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ms i\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 258, in iterencode
-    return _iterencode(o, 0)
-           ^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 120, in _default
-    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
-TypeError: Object of type int64 is not JSON serializable
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:32:36] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+TypeError: Object of type DataFrame is not JSON serializable
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:55:38] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 13:59:17] "POST /processing HTTP/1.1" 200 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
@@ -587,124 +1220,17 @@ Traceback (most recent call last):
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
     rv = self.handle_user_exception(e)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
          ^^^^^^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 382, in process_data
-    return jsonify(response)
-           ^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\__init__.py", line 170, in jsonify
-    return current_app.json.response(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 215, in response
-    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 180, in dumps
-    return json.dumps(obj, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ms i\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 238, in dumps
-    **kw).encode(obj)
-          ^^^^^^^^^^^
-  File "C:\Users\ms i\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 200, in encode
-    chunks = self.iterencode(o, _one_shot=True)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ms i\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 258, in iterencode
-    return _iterencode(o, 0)
-           ^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 120, in _default
-    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
-TypeError: Object of type int64 is not JSON serializable
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:33:16] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
-ERROR:app:Exception on /processing [POST]
-Traceback (most recent call last):
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 382, in process_data
-    return jsonify(response)
-           ^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\__init__.py", line 170, in jsonify
-    return current_app.json.response(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 215, in response
-    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 180, in dumps
-    return json.dumps(obj, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ms i\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 238, in dumps
-    **kw).encode(obj)
-          ^^^^^^^^^^^
-  File "C:\Users\ms i\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 200, in encode
-    chunks = self.iterencode(o, _one_shot=True)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ms i\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 258, in iterencode
-    return _iterencode(o, 0)
-           ^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 120, in _default
-    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
-TypeError: Object of type int64 is not JSON serializable
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:33:52] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
-ERROR:app:Exception on /processing [POST]
-Traceback (most recent call last):
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 382, in process_data
-    return jsonify(response)
-           ^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\__init__.py", line 170, in jsonify
-    return current_app.json.response(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 215, in response
-    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 180, in dumps
-    return json.dumps(obj, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ms i\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 238, in dumps
-    **kw).encode(obj)
-          ^^^^^^^^^^^
-  File "C:\Users\ms i\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 200, in encode
-    chunks = self.iterencode(o, _one_shot=True)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ms i\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 258, in iterencode
-    return _iterencode(o, 0)
-           ^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 120, in _default
-    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
-TypeError: Object of type int64 is not JSON serializable
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:33:56] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+  File "C:\KULIAH\backend-sentiment\app.py", line 341, in process_data
+    text_features = vectorizerAI.fit_transform(df['Processed Text'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MultinomialNB' object has no attribute 'fit_transform'
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 14:06:29] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
@@ -716,20 +1242,36 @@ Traceback (most recent call last):
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
     rv = self.handle_user_exception(e)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
          ^^^^^^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 376, in process_data
-    'confusion_matrix': cm.tolist(),
-                        ^^^^^^^^^
-AttributeError: 'list' object has no attribute 'tolist'
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:34:58] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+  File "C:\KULIAH\backend-sentiment\app.py", line 341, in process_data
+    text_features = vectorizerAI.fit_transform(df['Processed Text'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MultinomialNB' object has no attribute 'fit_transform'
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 14:09:53] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 341, in process_data
+    text_features = vectorizerAI.fit_transform(df['Processed Text'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MultinomialNB' object has no attribute 'fit_transform'
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 14:10:00] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
@@ -741,88 +1283,69 @@ Traceback (most recent call last):
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
     rv = self.handle_user_exception(e)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
          ^^^^^^^^^^^^^^^^^^^^^^^
   File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\KULIAH\backend-sentiment\app.py", line 382, in process_data
-    return jsonify(response)
-           ^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\__init__.py", line 170, in jsonify
-    return current_app.json.response(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 215, in response
-    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 180, in dumps
-    return json.dumps(obj, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ms i\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 238, in dumps
-    **kw).encode(obj)
-          ^^^^^^^^^^^
-  File "C:\Users\ms i\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 200, in encode
-    chunks = self.iterencode(o, _one_shot=True)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ms i\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 258, in iterencode
-    return _iterencode(o, 0)
-           ^^^^^^^^^^^^^^^^^
-  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\json\provider.py", line 120, in _default
-    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
-TypeError: Object of type int64 is not JSON serializable
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:35:41] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+  File "C:\KULIAH\backend-sentiment\app.py", line 340, in process_data
+    text_features = df['Processed Text'].apply(vectorize_text)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\pandas\core\series.py", line 4626, in apply
+    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\pandas\core\apply.py", line 1025, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\pandas\core\apply.py", line 1076, in apply_standard
+    mapped = lib.map_infer(
+             ^^^^^^^^^^^^^^
+  File "pandas\_libs\lib.pyx", line 2834, in pandas._libs.lib.map_infer
+  File "C:\KULIAH\backend-sentiment\app.py", line 185, in vectorize_text
+    text_features = vectorizer.transform(text)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1427, in transform
+    raise ValueError(
+ValueError: Iterable over raw text documents expected, string object received.
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 14:17:02] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:36:40] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 14:19:29] "POST /processing HTTP/1.1" 200 -
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 361, in process_data
+    X_train, X_test, y_train, y_test = train_test_split(df_concatenated.drop('Label', axis=1),y, test_size=0.8, random_state=123)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\model_selection\_split.py", line 2562, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\model_selection\_split.py", line 2236, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.8 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 14:20:04] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 14:22:15] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 14:27:04] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 14:27:50] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 14:28:52] "POST /processing HTTP/1.1" 200 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:38:19] "POST /processing HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 10:39:11] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 14:29:13] "POST /processing HTTP/1.1" 200 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 11:22:23] "POST /processing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 11:22:47] "POST /processing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 19:03:50] "POST /preprocessing HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:05:06] "POST /prediction HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:08:38] "POST /prediction HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:09:43] "POST /prediction HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:11:15] "POST /prediction HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:11:17] "POST /prediction HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:18:56] "POST /prediction HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:25:14] "POST /prediction HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:25:39] "POST /prediction HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:27:15] "POST /prediction HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:31:00] "POST /prediction HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:34:53] "POST /prediction HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:47:05] "POST /prediction HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:48:24] "POST /prediction HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:48:41] "POST /prediction HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/May/2023 20:48:56] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2023 14:29:43] "POST /processing HTTP/1.1" 200 -
