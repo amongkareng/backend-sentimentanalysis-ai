@@ -377,6 +377,13 @@ def process_data():
     X_train.columns = X_train.columns.astype(str)
     X_test.columns = X_test.columns.astype(str)
 
+    #get total number of data
+    total_data = len(df_concatenated)
+    #get number of sample for training
+    num_train_samples = len(X_train)
+    #get number of sample for testing
+    num_test_samples =len(X_test)
+    
 
     # Apply Laplace smoothing
     alpha = 2.0  # Laplace smoothing parameter
@@ -384,6 +391,8 @@ def process_data():
     # Train a Naive Bayes classifier with Laplace smoothing
     clf = MultinomialNB(alpha=alpha)
     clf.fit(X_train, y_train)
+    
+
 
     # Make predictions on the test set
     y_pred = clf.predict(X_test)
@@ -397,6 +406,9 @@ def process_data():
 
 
     response = {
+        'total_data':total_data,
+        'num_train_samples':num_train_samples,
+        'num_test_samples' : num_test_samples,
         'predictions': [],
         'accuracy': accuracy,
         'precision': precision,
