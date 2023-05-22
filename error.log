@@ -1398,3 +1398,304 @@ INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug:127.0.0.1 - - [22/May/2023 08:49:26] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:11:01] "[33mPOST /preprocessing HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:12:57] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /preprocessing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 261, in pre_processing
+    'slangremove_andfinaltext' : slang_remove(tweet.get('join_text')),
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 169, in slang_remove
+    text = nltk.word_tokenize(text.lower())
+                              ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:14:40] "[35m[1mPOST /preprocessing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /preprocessing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 261, in pre_processing
+    'slangremove_andfinaltext' : slang_remove(tweet.get('join_text')),
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 169, in slang_remove
+    text = nltk.word_tokenize(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\__init__.py", line 129, in word_tokenize
+    sentences = [text] if preserve_line else sent_tokenize(text, language)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\__init__.py", line 107, in sent_tokenize
+    return tokenizer.tokenize(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1281, in tokenize
+    return list(self.sentences_from_text(text, realign_boundaries))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1341, in sentences_from_text
+    return [text[s:e] for s, e in self.span_tokenize(text, realign_boundaries)]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1341, in <listcomp>
+    return [text[s:e] for s, e in self.span_tokenize(text, realign_boundaries)]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1329, in span_tokenize
+    for sentence in slices:
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1459, in _realign_boundaries
+    for sentence1, sentence2 in _pair_iter(slices):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 321, in _pair_iter
+    prev = next(iterator)
+           ^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1431, in _slices_from_text
+    for match, context in self._match_potential_end_contexts(text):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1395, in _match_potential_end_contexts
+    for match in self._lang_vars.period_context_re().finditer(text):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:20:08] "[35m[1mPOST /preprocessing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:20:38] "POST /processing HTTP/1.1" 200 -
+ERROR:app:Exception on /preprocessing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 261, in pre_processing
+    'slangremove_andfinaltext' : slang_remove(tweet.get('join_text')),
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 169, in slang_remove
+    text = nltk.word_tokenize(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\__init__.py", line 129, in word_tokenize
+    sentences = [text] if preserve_line else sent_tokenize(text, language)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\__init__.py", line 107, in sent_tokenize
+    return tokenizer.tokenize(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1281, in tokenize
+    return list(self.sentences_from_text(text, realign_boundaries))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1341, in sentences_from_text
+    return [text[s:e] for s, e in self.span_tokenize(text, realign_boundaries)]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1341, in <listcomp>
+    return [text[s:e] for s, e in self.span_tokenize(text, realign_boundaries)]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1329, in span_tokenize
+    for sentence in slices:
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1459, in _realign_boundaries
+    for sentence1, sentence2 in _pair_iter(slices):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 321, in _pair_iter
+    prev = next(iterator)
+           ^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1431, in _slices_from_text
+    for match, context in self._match_potential_end_contexts(text):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1395, in _match_potential_end_contexts
+    for match in self._lang_vars.period_context_re().finditer(text):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:20:41] "[35m[1mPOST /preprocessing HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /preprocessing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 261, in pre_processing
+    'slangremove_andfinaltext' : slang_remove(tweet.get('join_text')),
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 169, in slang_remove
+    text = nltk.word_tokenize(text.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\__init__.py", line 129, in word_tokenize
+    sentences = [text] if preserve_line else sent_tokenize(text, language)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\__init__.py", line 107, in sent_tokenize
+    return tokenizer.tokenize(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1281, in tokenize
+    return list(self.sentences_from_text(text, realign_boundaries))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1341, in sentences_from_text
+    return [text[s:e] for s, e in self.span_tokenize(text, realign_boundaries)]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1341, in <listcomp>
+    return [text[s:e] for s, e in self.span_tokenize(text, realign_boundaries)]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1329, in span_tokenize
+    for sentence in slices:
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1459, in _realign_boundaries
+    for sentence1, sentence2 in _pair_iter(slices):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 321, in _pair_iter
+    prev = next(iterator)
+           ^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1431, in _slices_from_text
+    for match, context in self._match_potential_end_contexts(text):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\nltk\tokenize\punkt.py", line 1395, in _match_potential_end_contexts
+    for match in self._lang_vars.period_context_re().finditer(text):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:22:45] "[35m[1mPOST /preprocessing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /preprocessing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 261, in pre_processing
+    'slangremove_andfinaltext' : slang_remove(tweet.get('join_text')),
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 169, in slang_remove
+    text = nltk.word_tokenize(text.lower())
+                              ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:23:15] "[35m[1mPOST /preprocessing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:34:05] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:34:40] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:34:42] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:35:14] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:35:27] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:37:42] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:38:36] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:38:53] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:39:34] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:40:13] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:40:42] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:41:34] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:41:39] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:42:11] "[31m[1mPOST /processing HTTP/1.1[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:42:44] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:43:27] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:43:50] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:49:57] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:51:25] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:55:47] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:56:29] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 10:58:26] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:04:27] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:05:15] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:08:49] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:09:49] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:10:10] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:10:12] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:10:54] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:10:55] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:10:57] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:11:19] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:12:08] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:12:28] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:12:59] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:13:36] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:13:54] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:14:36] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:15:06] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:15:08] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:15:10] "POST /preprocessing HTTP/1.1" 200 -

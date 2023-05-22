@@ -44,8 +44,9 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 model_dataset = joblib.load('./model/model_dataset.pkl')
 vectorizer_dataset = joblib.load('./vectorizer/vectorizer_dataset.pkl')
-model_AI = joblib.load('./model/SentimenAnalisisAImodel.pkl')
-vectorizerAI = joblib.load('./vectorizer/SentimenAnalisisAIvectorizer.pkl')
+model_AI = joblib.load('./model/model_datasetAI.pkl')
+vectorizerAI = joblib.load('./vectorizer/vectorizer_datasetAI.pkl')
+
 
 app = Flask(__name__)
 CORS(app)
@@ -166,7 +167,7 @@ def slang_remove(text):
     # Replace slang words with their real counterparts
     text = replace_slang(text)
     # Tokenize the text
-    text = nltk.word_tokenize(text.lower())
+    text = nltk.word_tokenize(text)
     # Apply mark negation
     text = mark_negation(text)
     # Join the tokens back into a string
@@ -185,7 +186,6 @@ def vectorize_text(text):
     # Apply CountVectorizer to the preprocessed data
     text_features = vectorizer.transform(text)
     return text_features
-
 
 # Initialize label encoder
 label_encoder = LabelEncoder()
@@ -284,22 +284,7 @@ def pre_processing():
     })
 ################################################################
 
-from flask import Flask, jsonify, request
-from sklearn.feature_extraction.text import CountVectorizer
-from nltk.tokenize import RegexpTokenizer
-from sklearn.preprocessing import LabelEncoder
-from scipy.sparse import hstack
-from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.metrics import accuracy_score, precision_score, recall_score
-import pandas as pd
-import numpy as np
 
-app = Flask(__name__)
-
-def replace_slang(text):
-    # Implement your replace_slang function here
-    pass
 
 @app.route('/processing', methods=['POST'])
 def process_data():
@@ -448,7 +433,7 @@ def predict_dataset():
         predictions = []
         true_labels = []
         for item in texts:
-            text = item['join_text'].lower()  # Extract the text from the 'join_text' field
+            text = item['Tweet Text'].lower()  # Extract the text from the 'join_text' field
 
             text_counts = vectorizer_dataset.transform([text])
             predicted_label = model_dataset.predict(text_counts)[0]
@@ -458,18 +443,13 @@ def predict_dataset():
         
         # Calculate evaluation metrics
         predicted_labels = [pred['sentiment'] for pred in predictions]
-        confusion = confusion_matrix(true_labels, predicted_labels)
         accuracy = accuracy_score(true_labels, predicted_labels)
-        precision = precision_score(true_labels, predicted_labels)
-        recall = recall_score(true_labels, predicted_labels)
+
 
         # Create the response dictionary including predictions and evaluation metrics
         response = {
             'predictions': predictions,
-            'confusion_matrix': confusion.tolist(),
-            'accuracy': accuracy,
-            'precision': precision,
-            'recall': recall
+            'accuracy': accuracy
         }
 
         # Return the response dictionary as JSON response
@@ -478,7 +458,6 @@ def predict_dataset():
     except Exception as e:
         # Return an error message if an exception occurs
         return jsonify({'error': str(e)})
-
 if __name__ == '__main__':
     app.debug = True
     app.run()
