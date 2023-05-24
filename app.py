@@ -296,6 +296,7 @@ def process_data():
 
     processed_texts = []
     labels = []
+    list_emosi = []
     positive_emotions_list = []
     negative_emotions_list = []
     label_encoder.fit([entry.get('Emosi') for entry in data])
@@ -307,6 +308,7 @@ def process_data():
         label = entry.get('Label')
     # Preprocess the tweet text
         processed_texts.append(tweet_text)
+        list_emosi.append(emosi)
         emosi_encoded = label_encoder.transform([emosi])[0]
         
         positive_emotion = 1 if label_encoder.inverse_transform([emosi_encoded])[0] in positive_emotions else 0
@@ -318,7 +320,10 @@ def process_data():
         labels.append(label)
 
 # Create a DataFrame from the processed texts and emotion features
-    df = pd.DataFrame({'Processed Text': processed_texts, 'Label': labels})
+    df = pd.DataFrame({'Processed Text': processed_texts,'Emosi' :list_emosi, 'Label': labels})
+    # Print the 'Emosi' column
+    print(df['Emosi'])
+
 
 # Apply conversion to positive and negative emotions using lambda functions
     df['Positive Emotion'] = positive_emotions_list
@@ -395,21 +400,38 @@ def process_data():
         'num_train_samples':num_train_samples,
         'num_test_samples' : num_test_samples,
         'predictions': [],
+        'training' : [],
         'accuracy': accuracy,
         'precision': precision,
         'recall': recall
     }
 
-    for entry, predicted_label in zip(data, y_pred):
-        tweet_text = entry.get('Tweet Text')
+    for entry, predicted_label, label in zip(X_test.index, y_pred, df['Label']):
+        tweet_text = df['Processed Text'][entry]
+        emosi = df['Emosi'][entry]
         predicted_label = label_encoder.inverse_transform([predicted_label])[0]
 
         response['predictions'].append({
-            'Tweet Text': tweet_text,
-            'Predicted Label': predicted_label
-        })
+        'Tweet Text': tweet_text,
+        'Emosi': emosi,
+        'Label': label,
+        'Predicted Label': predicted_label
+    })
+    
+    # Add training data
+    for entry, label in zip(X_train.index, df['Label']):
+        tweet_text = df['Processed Text'][entry]
+        emosi = df['Emosi'][entry]
 
-    # Convert DataFrame to JSON
+        response['training'].append({
+        'Tweet Text': tweet_text,
+        'Emosi': emosi,
+        'Label': label
+    })
+
+
+
+
     return jsonify(response)
 
 if __name__ == '__main__':
@@ -433,7 +455,7 @@ def predict_dataset():
         predictions = []
         true_labels = []
         for item in texts:
-            text = item['Tweet Text'].lower()  # Extract the text from the 'join_text' field
+            text = item['join_text'].lower()  # Extract the text from the 'join_text' field
 
             text_counts = vectorizer_dataset.transform([text])
             predicted_label = model_dataset.predict(text_counts)[0]
@@ -443,17 +465,26 @@ def predict_dataset():
         
         # Calculate evaluation metrics
         predicted_labels = [pred['sentiment'] for pred in predictions]
+        confusion = confusion_matrix(true_labels, predicted_labels)
         accuracy = accuracy_score(true_labels, predicted_labels)
-
+        precision = precision_score(true_labels, predicted_labels)
+        recall = recall_score(true_labels, predicted_labels)
 
         # Create the response dictionary including predictions and evaluation metrics
         response = {
             'predictions': predictions,
-            'accuracy': accuracy
+            'confusion_matrix': confusion.tolist(),
+            'accuracy': accuracy,
+            'precision': precision,
+            'recall': recall
         }
 
         # Return the response dictionary as JSON response
         return jsonify(response)
+    
+    except Exception as e:
+        # Return an error message if an exception occurs
+        return jsonify({'error': str(e)})
     
     except Exception as e:
         # Return an error message if an exception occurs

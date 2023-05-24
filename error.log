@@ -1699,3 +1699,604 @@ INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:15:06] "POST /processing HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:15:08] "POST /prediction HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [22/May/2023 11:15:10] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:04:10] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:04:15] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:04:27] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:04:27] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:04:36] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:04:40] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:09:05] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:09:05] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:19:02] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:19:05] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:19:12] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:19:12] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:19:32] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:19:35] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:19:37] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:19:37] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:25:12] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:25:15] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:25:19] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:25:19] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:25:43] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:25:46] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:25:49] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:25:49] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:27:33] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:27:35] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:27:37] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:27:37] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:27:46] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:27:49] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:27:51] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:27:51] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:28:34] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:28:34] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:28:48] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:28:48] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:29:04] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:29:06] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:29:08] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:29:08] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:29:52] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:29:55] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:29:58] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:29:58] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:34:43] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:34:46] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:34:50] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:34:50] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:35:55] "[33mGET / HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:35:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+  INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:36:39] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:39:39] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:39:54] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:40:07] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:40:07] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:40:49] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:40:49] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:41:00] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:41:03] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:44:55] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:45:07] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:46:44] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:46:47] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:47:22] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:47:22] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:47:52] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:47:52] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:47:53] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:48:28] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:48:28] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 14:59:54] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:00:02] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:00:07] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:00:07] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:17:11] "OPTIONS /processing HTTP/1.1" 200 -
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 332, in process_data
+    text_features = vectorizer.fit_transform(df['Processed Text'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1388, in fit_transform
+    vocabulary, X = self._count_vocab(raw_documents, self.fixed_vocabulary_)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1294, in _count_vocab
+    raise ValueError(
+ValueError: empty vocabulary; perhaps the documents only contain stop words
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:17:11] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:18:00] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:18:03] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:18:06] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:18:06] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:19:33] "OPTIONS /processing HTTP/1.1" 200 -
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 332, in process_data
+    text_features = vectorizer.fit_transform(df['Processed Text'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1388, in fit_transform
+    vocabulary, X = self._count_vocab(raw_documents, self.fixed_vocabulary_)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1294, in _count_vocab
+    raise ValueError(
+ValueError: empty vocabulary; perhaps the documents only contain stop words
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:19:33] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:21:15] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:21:15] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:21:22] "OPTIONS /preprocessing HTTP/1.1" 200 -
+ERROR:app:Exception on /preprocessing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 227, in pre_processing
+    'cleansing_text': cleansing(tweet.get('removeemoji_text')),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 81, in cleansing
+    text = text.strip()
+           ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'strip'
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:21:22] "[35m[1mPOST /preprocessing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:22:02] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:22:10] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:22:15] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:22:15] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:22:41] "OPTIONS /preprocessing HTTP/1.1" 200 -
+ERROR:app:Exception on /preprocessing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 227, in pre_processing
+    'cleansing_text': cleansing(tweet.get('removeemoji_text')),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 81, in cleansing
+    text = text.strip()
+           ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'strip'
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:22:41] "[35m[1mPOST /preprocessing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:23:46] "OPTIONS /processing HTTP/1.1" 200 -
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 332, in process_data
+    text_features = vectorizer.fit_transform(df['Processed Text'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1388, in fit_transform
+    vocabulary, X = self._count_vocab(raw_documents, self.fixed_vocabulary_)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1294, in _count_vocab
+    raise ValueError(
+ValueError: empty vocabulary; perhaps the documents only contain stop words
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:23:46] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:26:22] "OPTIONS /processing HTTP/1.1" 200 -
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 332, in process_data
+    text_features = vectorizer.fit_transform(df['Processed Text'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1388, in fit_transform
+    vocabulary, X = self._count_vocab(raw_documents, self.fixed_vocabulary_)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1294, in _count_vocab
+    raise ValueError(
+ValueError: empty vocabulary; perhaps the documents only contain stop words
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:26:22] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:27:04] "[31m[1mGET /processing HTTP/1.1[0m" 405 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:27:08] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:27:52] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:29:07] "OPTIONS /processing HTTP/1.1" 200 -
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 332, in process_data
+    text_features = vectorizer.fit_transform(df['Processed Text'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1388, in fit_transform
+    vocabulary, X = self._count_vocab(raw_documents, self.fixed_vocabulary_)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1294, in _count_vocab
+    raise ValueError(
+ValueError: empty vocabulary; perhaps the documents only contain stop words
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:29:07] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:45:41] "OPTIONS /processing HTTP/1.1" 200 -
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 332, in process_data
+    text_features = vectorizer.fit_transform(df['Processed Text'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1388, in fit_transform
+    vocabulary, X = self._count_vocab(raw_documents, self.fixed_vocabulary_)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1294, in _count_vocab
+    raise ValueError(
+ValueError: empty vocabulary; perhaps the documents only contain stop words
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:45:41] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:45:53] "OPTIONS /processing HTTP/1.1" 200 -
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 332, in process_data
+    text_features = vectorizer.fit_transform(df['Processed Text'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1388, in fit_transform
+    vocabulary, X = self._count_vocab(raw_documents, self.fixed_vocabulary_)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1294, in _count_vocab
+    raise ValueError(
+ValueError: empty vocabulary; perhaps the documents only contain stop words
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:45:53] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:47:22] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:47:22] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:48:37] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:48:37] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:49:03] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:49:03] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:49:30] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:50:22] "OPTIONS /processing HTTP/1.1" 200 -
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 332, in process_data
+    text_features = vectorizer.fit_transform(df['Processed Text'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1388, in fit_transform
+    vocabulary, X = self._count_vocab(raw_documents, self.fixed_vocabulary_)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\feature_extraction\text.py", line 1294, in _count_vocab
+    raise ValueError(
+ValueError: empty vocabulary; perhaps the documents only contain stop words
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:50:22] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:51:28] "OPTIONS /processing HTTP/1.1" 200 -
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 301, in process_data
+    label_encoder.fit([entry.get('Emosi') for entry in data])
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 301, in <listcomp>
+    label_encoder.fit([entry.get('Emosi') for entry in data])
+                       ^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:51:28] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:51:54] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:51:54] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:53:53] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:54:01] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:54:05] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:54:05] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:55:56] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:56:04] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:56:11] "OPTIONS /processing HTTP/1.1" 200 -
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 353, in process_data
+    X_train, X_test, y_train, y_test = train_test_split(df_concatenated.drop('Label', axis=1), y, test_size=ratio, random_state=random_state)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\model_selection\_split.py", line 2562, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\sklearn\model_selection\_split.py", line 2236, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.4 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:56:11] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:57:28] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:57:31] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:57:33] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:57:33] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:57:35] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:58:05] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 15:58:05] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 16:03:26] "OPTIONS /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 16:03:29] "POST /preprocessing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 16:03:33] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 16:03:33] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 16:03:49] "OPTIONS /prediction HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/May/2023 16:03:49] "POST /prediction HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:07:08] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:11:01] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:15:01] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:15:17] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:15:33] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:21:21] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:23:35] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:24:29] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:24:45] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:25:07] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:25:24] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:26:11] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:26:45] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /processing [POST]
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3652, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas\_libs\index.pyx", line 147, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 176, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Emosi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KULIAH\backend-sentiment\app.py", line 404, in process_data
+    for entry, predicted_label, emosi, label in zip(X_test.index, y_pred, df['Emosi'].iloc[X_test.index], df['Label'].iloc[X_test.index]):
+                                                                          ~~^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\pandas\core\frame.py", line 3761, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\KULIAH\backend-sentiment\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3654, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Emosi'
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:30:15] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:33:56] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:34:17] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:34:51] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:36:25] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:37:21] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:39:34] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:42:25] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:45:08] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:46:12] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:48:05] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:49:47] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:50:15] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:57:00] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:57:54] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 21:57:58] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 22:00:05] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 22:06:54] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 22:11:20] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 22:13:37] "POST /processing HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/May/2023 22:16:41] "POST /processing HTTP/1.1" 200 -
