@@ -403,7 +403,9 @@ def process_data():
         'training' : [],
         'accuracy': accuracy,
         'precision': precision,
-        'recall': recall
+        'recall': recall,
+        'ratio' : ratio,
+        'test_samples':test_samples
     }
 
     for entry, predicted_label, label in zip(X_test.index, y_pred, df['Label']):
